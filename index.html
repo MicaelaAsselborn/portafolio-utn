@@ -9,13 +9,14 @@
   <body>
     <header>
       <nav>
-        <label for="menu-hamburguesa">
+        <input type="checkbox" id="menu-hamburguesa" class="menu-hamburguesa" />
+        <label for="menu-hamburguesa" class="icono-hamburguesa">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="35"
             height="35"
             fill="currentColor"
-            class="icono-hamburguesa"
+            class="icono-abrir"
             viewBox="0 0 16 16"
           >
             <path
@@ -23,8 +24,19 @@
               d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
             />
           </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            fill="currentColor"
+            class="icono-cerrar"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+            />
+          </svg>
         </label>
-        <input type="checkbox" id="menu-hamburguesa" class="menu-hamburguesa" />
         <ul class="navbar">
           <li><a href="#hero" class="underline">Inicio</a></li>
           <li><a href="#proyectos" class="underline">Proyectos</a></li>
@@ -35,12 +47,25 @@
     </header>
     <main>
       <section id="hero">
-        Sección Hero con imagen y texto adaptativo
-        <h1>Portafolio</h1>
+        <p>Hola, mi nombre es</p>
+        <h1>Micaela Asselborn.</h1>
+        <h3>Me gusta construir cosas en la web.</h3>
+        <p>
+          Soy una desarrolladora web en progreso. Llevo unos 7 meses como
+          autodidacta siguiendo bootcamps como freeCodeCamp y The Odin Project,
+          y recientemente decidí anotarme a una diplomatura de Desarrollo Web
+          Fullstack en la UTN.
+        </p>
+        <img
+          src="./images/foto-cv.jpeg"
+          alt="Foto de Micaela"
+          width="80%"
+          class="centrada"
+        />
       </section>
       <section id="proyectos">Sección de proyectos con Grid responsivo</section>
       <section id="contactos">Formulario de contacto responsive</section>
-      <section id="Galeria">
+      <section id="galeria">
         Galeria con imágenes de distintos tamaños según dispositivo. Usar srset
       </section>
       <footer>

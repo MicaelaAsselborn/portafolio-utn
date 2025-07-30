@@ -8,3 +8,7 @@ SE LOGRO:
 
 - Menú hamburguesa despegable.
 - Animación underline.
+
+TAREAS:
+
+- Estudiar bien el posicionamiento de los elementos para usar + y ~

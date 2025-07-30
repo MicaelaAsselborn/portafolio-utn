@@ -6,7 +6,7 @@
 }
 :root{
     --altura-header: 80px;
-    --negro: #131313;
+    --negro: #00000f;
     --azul-oscuro: #000022;
     --violeta: #6747c7;
     --lila: #a68feb;
@@ -56,14 +56,23 @@ nav{
     text-align:end;
     padding: 2px 10px;
 }
-.menu-hamburguesa{
+.menu-hamburguesa, .icono-cerrar{
     display: none;
 }
-.menu-hamburguesa:checked + .navbar{
+.icono-abrir{
+    display: inline;
+}
+.menu-hamburguesa:checked ~ .navbar{
     height: calc(100% - var(--altura-header));
 }
+.menu-hamburguesa:checked + .icono-hamburguesa .icono-abrir{
+    display: none;
+}
+.menu-hamburguesa:checked + .icono-hamburguesa .icono-cerrar{
+    display: inline;
+}
 .navbar{
-    background-color: var(--azul-oscuro);
+    background-color: var(--negro);
     width: 100%;
     position: absolute;
     top: var(--altura-header);
@@ -93,5 +102,23 @@ nav{
 }
 #hero{
     height: calc(100vh - var(--altura-header));
-    text-align: center;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items:flex-start;
+    padding: 30px;
+    gap: 10px;
+}
+p{
+    color: var(--lila);
+}
+h1{
+    color: rgb(228, 205, 255);
+}
+h3{
+    color: rgb(205, 171, 245)  
+}
+.centrada{
+    margin: 0 auto;
+    border-radius: 15px;
 }
