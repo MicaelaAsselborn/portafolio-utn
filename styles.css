@@ -26,6 +26,9 @@ a{
     text-decoration: none;
     color: var(--lila);
 }
+
+/* ANIMACIÓN UNDERLINE */
+
 .underline{
     display: inline-block;
     position: relative;
@@ -56,11 +59,11 @@ nav{
     text-align:end;
     padding: 2px 10px;
 }
+
+/* ANIMACIÓN MENU HAMBURGUESA */
+
 .menu-hamburguesa, .icono-cerrar{
     display: none;
-}
-.icono-abrir{
-    display: inline;
 }
 .menu-hamburguesa:checked ~ .navbar{
     height: calc(100% - var(--altura-header));
@@ -77,7 +80,6 @@ nav{
     position: absolute;
     top: var(--altura-header);
     left: 0;
-    height: calc(100vh - var(--altura-header));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,6 +102,9 @@ nav{
         background-color: var(--negro);
     }
 }
+
+/* HERO SECTION */
+
 #hero{
     height: calc(100vh - var(--altura-header));
     display: flex;
@@ -107,18 +112,119 @@ nav{
     justify-content: center;
     align-items:flex-start;
     padding: 30px;
+    text-align: center;
+}
+#hero div{
+    display: flex;
+    flex-direction: column;
     gap: 10px;
+    margin-top: 80px;
 }
 p{
     color: var(--lila);
+    font-size: 1.3rem;
 }
 h1{
     color: rgb(228, 205, 255);
+    font-size: 3rem;
 }
 h3{
-    color: rgb(205, 171, 245)  
+    color: rgb(205, 171, 245);
+    font-size: 1.8rem;
 }
-.centrada{
-    margin: 0 auto;
+img{
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
+}
+.selfie{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    width: 100%;
+    position: relative;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.selfie::after, .selfie::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), red, orange, yellow, green, blue, violet, red);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10px;
+    border-radius: 15px;
+    animation: spin 3s linear infinite;
+}
+.selfie::before{
+    filter: blur(1.5rem);
+    opacity: 0.8;
+}
+@keyframes spin{
+    from{
+        --angle: 0deg
+    }
+    to{
+        --angle: 360deg
+    }
+}
+@media (min-width: 768px){
+    #hero{
+        width: 98%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+        grid-template-rows: repeat(4,1fr);
+        gap: 30px;
+    }
+    .presentacion{
+        grid-column: 1/2;
+        grid-row: 2/5;
+        margin: 0;
+        text-align: start;
+    }
+    .selfie{
+        width: 100%;
+        height: auto;
+        grid-column: 2/3;
+        grid-row: 2/5;
+    }
+}
+@media (min-width: 1024px){
+    header{
+        height: 10vh;
+    }
+    nav a{
+        font-size: 3rem;
+    }
+    #hero{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .presentacion{
+        width: 50%;
+    }
+    .selfie{
+        width: 400px;
+    }
+}
+@media (min-width: 1440px){
+    .hero{
+        gap: 50px;
+    }
+}
+@media (min-width: 2560px){
+    .presentacion{
+        width: 40%;
+    }
 }
