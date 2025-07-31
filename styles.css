@@ -216,7 +216,7 @@ img{
     }
 }
 @media (min-width: 1440px){
-    header{
+    header, .navbar{
         height: 8vh;
     }
     .presentacion{
@@ -271,6 +271,6 @@ footer{
     padding: 10px;
 }
 footer p{
-    padding: 3px;
+    padding: 4px;
     font-size: 1em;
 }
