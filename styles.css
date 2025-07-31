@@ -88,6 +88,7 @@ nav{
     height: 0;
     overflow: hidden;
     transition: all 0.4s ease;
+    z-index: 1;
 }
 @media (min-width: 768px){
     .icono-hamburguesa{
@@ -105,20 +106,22 @@ nav{
 
 /* HERO SECTION */
 
+
 #hero{
     height: calc(100vh - var(--altura-header));
     display: flex;
     flex-direction: column ;
     justify-content: center;
-    align-items:flex-start;
+    align-items:center;
     padding: 30px;
     text-align: center;
+    margin-top: calc(var(--altura-header) + 50px);
 }
-#hero div{
+.presentacion{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 80px;
+    gap: 20px;
+    padding-bottom: 50px;
 }
 p{
     color: var(--lila);
@@ -143,7 +146,9 @@ img{
     justify-content: center;
     border-radius: 15px;
     width: 100%;
+    max-width: 300px;
     position: relative;
+    margin: auto;
 }
 @property --angle{
     syntax: "<angle>";
@@ -180,22 +185,17 @@ img{
     #hero{
         width: 98%;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: 3fr 3fr;
-        grid-template-rows: repeat(4,1fr);
-        gap: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
     }
     .presentacion{
-        grid-column: 1/2;
-        grid-row: 2/5;
-        margin: 0;
         text-align: start;
-    }
-    .selfie{
-        width: 100%;
-        height: auto;
-        grid-column: 2/3;
-        grid-row: 2/5;
+        width: 50%;
+        gap: 10px;
+        padding: 0;
     }
 }
 @media (min-width: 1024px){
@@ -203,10 +203,10 @@ img{
         height: 10vh;
     }
     nav a{
-        font-size: 3rem;
+        font-size: 2rem;
     }
     #hero{
-        width: 80%;
+        width: 90%;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -214,17 +214,63 @@ img{
     .presentacion{
         width: 50%;
     }
-    .selfie{
-        width: 400px;
-    }
 }
 @media (min-width: 1440px){
-    .hero{
-        gap: 50px;
+    header{
+        height: 8vh;
+    }
+    .presentacion{
+        margin-right: 50px;
+    }
+    .selfie{
+        max-width: 400px;
+    }
+    p{
+        font-size: 2em;
+    }
+    h1{
+        font-size: 4em;
+    }
+    h3{
+        font-size: 3em;
     }
 }
 @media (min-width: 2560px){
-    .presentacion{
-        width: 40%;
+    nav a{
+        font-size: 2em;
     }
+    nav{
+        padding-right: 30px;
+    }
+    #hero{
+        width: 70%;
+    }
+    .selfie{
+        max-width: 500px;
+    }
+    p{
+        font-size: 3em;
+    }
+    h1{
+        font-size: 5em;
+    }
+    h3{
+        font-size: 4em;
+    }
+}
+
+#proyectos {
+    margin-top: 80px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align: center;
+    background-color: var(--negro);
+    padding: 10px;
+}
+footer p{
+    padding: 3px;
+    font-size: 1em;
 }
